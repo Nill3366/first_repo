@@ -6,11 +6,12 @@ A simple Python script that takes student details and subject marks as input, ca
 ## Features
 
 - Captures student information (Name, Roll Number, Department, and Age).
-- Accepts marks for five different subjects.
+- Accepts five subject marks using robust input validation to ensure only numbers between 0 and 100 are accepted.
 - Automatically calculates:
   - Total marks obtained.
   - Average marks.
   - Percentage score.
+- Assigns a Grade based on the percentage.
 - Displays a clean, formatted report of the results.
 
 ## Prerequisites
@@ -54,14 +55,15 @@ _________________________
      STUDENT REPORT
 _________________________
 Subject_1 : 85.0
-Subject_1 : 90.0
-Subject_1 : 78.0
-Subject_1 : 92.0
-Subject_1 : 88.0
+Subject_2 : 90.0
+Subject_3 : 78.0
+Subject_4 : 92.0
+Subject_5 : 88.0
 
 total : 433.0
 average : 86.6
 percentage : 86.6
+Grade : B
 ```
 
 ## License
@@ -72,15 +74,40 @@ student_name=input("enter your name : ")
 roll_number= int(input("enter your roll number : "))
 Department = input("enter your Department name : ")
 age = int(input("enter your age : "))
-Subject_1  = float(input("enter your subject 1 mark : "))
-Subject_2 =  float(input("enter your subject 2 mark : "))
-Subject_3 = float(input("enter your subject 3 mark : "))
-Subject_4 = float(input("enter your subject 4 mark : "))
-Subject_5 = float(input("enter your subject 5 mark : "))
+def get_valid_mark(subject_number):
+    while True:
+        try:
+            mark = float(
+                input(f"enter your subject {subject_number} mark: ")
+            )
+            if 0 <= mark <= 100:
+                return mark
+            else:
+                print("Marks must be between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+
+Subject_1 = get_valid_mark(1)
+Subject_2 = get_valid_mark(2)
+Subject_3 = get_valid_mark(3)
+Subject_4 = get_valid_mark(4)
+Subject_5 = get_valid_mark(5)
 
 total=Subject_1 + Subject_2 + Subject_3 + Subject_4 + Subject_5
 average =total / 5
 percentage= total / 500 * 100
+
+if percentage >= 90:
+    grade = 'A'
+elif percentage >= 80:
+    grade = 'B'
+elif percentage >= 70:
+    grade = 'C'
+elif percentage >= 60:
+    grade = 'D'
+else:
+    grade = 'F'
 
 print("_"*25)
 print("\n     STUDENT REPORT")
@@ -95,3 +122,4 @@ print(f"Subject_1 : {Subject_5}\n")
 print(f"total : {total}")
 print(f"average : {average}")
 print(f"percentage : {percentage}\n")
+print(f"Grade : {grade}")
