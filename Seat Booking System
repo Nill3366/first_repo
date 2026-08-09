@@ -1,0 +1,35 @@
+##Python Seat Booking System
+A simple, interactive command-line Python script that dynamically generates a seating grid and allows users to reserve available seats.
+
+🚀 Features
+Dynamic Seat Generation: Automatically creates a list of available seats labeled from A1 to K10 (using ASCII character generation).
+
+Interactive Booking: Runs an continuous loop prompting the user to input their desired seat.
+
+Built-in Validation:
+
+Prevents users from booking seats that don't exist (e.g., typing "Z99").
+
+Prevents double-booking by checking if a seat is already in the reserved list.
+
+Booking Summary: Displays a complete list of all successfully booked seats upon exiting the program.
+
+🛠️ How to Use
+Run the script in your Python environment.
+
+When prompted with enter you seat :, type the seat you want to book (e.g., A1, C5, K10).
+
+If the seat is available, you will see a success message. If it is invalid or taken, you will receive an error warning.
+
+To exit the program and view your final booking summary, simply type no.
+
+💻 Code Overview
+The script utilizes standard Python features including:
+
+for loops and range() for grid generation.
+
+chr() to convert integer values to ASCII letters.
+
+while True loops for continuous user input.
+
+try...except blocks with ValueError for clean error handling.
