@@ -1,72 +1,77 @@
 # first_repo
-# Student Report Generator
+🎓 Student Report Generator
 
-A simple Python script that takes student details and subject marks as input, calculates the total, average, and percentage, and prints a formatted student report.
+A simple Python script that takes student info and marks, calculates results, displays a report, and saves the data in a CSV file.
 
-## Features
+##Features
+Collects student name, roll number, department, and age.
+Accepts 5 subject marks with validation (0–100).
+Calculates total, average, percentage, and grade.
+Displays a formatted report.
+Saves all student data to a CSV file using csv.DictWriter.
+How It Works
+User enters basic student info (name, roll number, department, age).
+For each subject (1 to 5), a while loop ensures marks are valid (between 0 and 100).
+Total, average, percentage, and grade are calculated.
+A student report is printed.
+User specifies a CSV file name.
+If the file doesn’t exist, a header is created.
+The student data is saved as a row in the CSV file.
 
-- Captures student information (Name, Roll Number, Department, and Age).
-- Accepts five subject marks using robust input validation to ensure only numbers between 0 and 100 are accepted.
-- Automatically calculates:
-  - Total marks obtained.
-  - Average marks.
-  - Percentage score.
-- Assigns a Grade based on the percentage.
-- Displays a clean, formatted report of the results.
+##Grade Calculation
+Percentage	Grade
+90–100	A
+80–89	B
+70–79	C
+60–69	D
+Below 60	F
 
-## Prerequisites
+##How to Run
+Ensure Python is installed.
+Save the script as student_report.py.
 
-To run this script, you need to have Python installed on your computer. You can download it from [python.org](https://www.python.org/).
+##Run the script:
 
-## How to Run
+python student_report.py
+Follow the prompts to enter student info, marks, and the file name.
+Example
 
-1. Clone this repository or copy the Python script.
-2. Open your terminal or command prompt.
-3. Navigate to the directory where the script is saved.
-4. Run the script using the following command:
+##Input:
 
-```bash
-python script_name.py
-```
-
-5. Follow the on-screen prompts to enter the student's name, roll number, department, age, and subject marks.
-
-## Example Usage
-
-When you run the script, you will be prompted to enter the data:
-
-```text
 enter your name : John Doe
 enter your roll number : 101
 enter your Department name : Computer Science
 enter your age : 20
-enter your subject 1 mark : 85
-enter your subject 2 mark : 90
-enter your subject 3 mark : 78
-enter your subject 4 mark : 92
-enter your subject 5 mark : 88
-```
+enter your subject 1 mark: 85
+enter your subject 2 mark: 90
+...
 
-The script will then output the report:
+##Output:
 
-```text
-_________________________
+STUDENT REPORT
 
-     STUDENT REPORT
-_________________________
-Subject_1 : 85.0
-Subject_2 : 90.0
-Subject_3 : 78.0
-Subject_4 : 92.0
-Subject_5 : 88.0
+Subject 1 : 85.0
+Subject 2 : 90.0
+...
+Total: 433
+Average: 86.6
+Percentage: 86.6
+Grade: B
 
-total : 433.0
-average : 86.6
-percentage : 86.6
-Grade : B
-```
+Student data saved successfully!
+Project Structure
+student-report-generator/
+│
+├── student_report.py
+├── student_info.csv (created by the script)
+└── README.md
+License
 
-## License
+Open source. Feel free to use and modify!
 
-##This project is open-source and available for anyone to use and modify.
+Author
+
+Nilesh Waghmare
+A learning project to practice Python basics and CSV file handling.
+
 
