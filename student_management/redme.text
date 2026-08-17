@@ -1,0 +1,38 @@
+Imports: The code imports essential modules—csv for file operations, os to check file existence, and abc for abstract base classes.
+Abstract Class (Person):
+Defines an abstract class Person with an abstract method display(). This ensures that any subclass must implement its own display() method.
+
+Student Class:
+Inherits from Person.
+Encapsulates student attributes: __sid, __name, __age, __course, and __marks using private attributes (double underscores).
+Provides getter and setter methods for each attribute (e.g., get_age(), set_age()).
+Implements the display() method (polymorphism) to print the student details.
+
+StudentManager Class:
+
+Manages student records using a CSV file (students.csv).
+
+create_file(): Checks if the file exists; if not, it creates it with headers (ID, Name, Age, Course, Marks).
+
+search_student_return(sid): Searches for a student by ID and returns the matching row if found.
+
+add_student(): Adds a new student after validating input (like unique ID, valid age, marks).
+
+view_students(): Displays all student records.
+
+search_student(): Searches for a student by ID and prints details.
+
+update_student(): Updates student details by reading all rows, modifying the match, and rewriting the file.
+
+delete_student(): Deletes a student by ID by filtering out that row and rewriting the CSV.
+
+Main Program:
+Instantiates the StudentManager.
+Ensures the CSV file exists.
+Runs a menu loop allowing the user to add, view, search, update, or delete student records, or exit.
+
+Program Start:
+
+The main() function is called if the script is executed, ensuring the system starts.
+
+In summary, the code is a complete console-based student management system that uses OOP principles (abstraction, inheritance, encapsulation, polymorphism) and handles data persistence via a CSV file.
